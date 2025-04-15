@@ -39,8 +39,8 @@ const Stats = () => {
                 alt="Star"
               />
             </div>
-            <h1 className="title-font sm:text-4xl text-3xl mb-8 font-semibold text-white">
-              Student and Experts Love Us
+            <h1 className="title-font sm:text-4xl text-2xl mb-8 font-semibold text-white">
+              Student and Experts Love Us. &nbsp;
               <br className="hidden lg:inline-block" />
               100% Success Rate
             </h1>
@@ -69,7 +69,7 @@ const Stats = () => {
                   <TfiLayoutMenuSeparated />
                 </p>
                 <p className="leading-tight font-medium text-2xl w-52 text-start mx-auto text-gray-800 mt-4">
-                  Worked With Clients
+                  Clients
                 </p>
                 {/* <!-- Red bottom border --> */}
                 <span className="absolute -bottom-6 -left-1 h-[3px] w-0 bg-red-500 group-hover:w-[151.5%] transition-all duration-500 ease-in-out"></span>
@@ -84,13 +84,13 @@ const Stats = () => {
                   <TfiLayoutMenuSeparated />
                 </p>
                 <p className="leading-tight font-medium text-2xl w-52 text-start mx-auto text-gray-800 mt-4">
-                  Successfull Visa Process
+                  Process
                 </p>
                 <span className="absolute -bottom-6 -left-1 h-[3px] w-0 bg-red-500 group-hover:w-[151.5%] transition-all duration-500 ease-in-out"></span>
               </div>
 
               {/* <!-- CARD 3 --> */}
-              <div className="group p-4 sm:w-1/4 w-1/2 border-l border-gray-300 relative">
+              <div className="group p-4 sm:w-1/4 w-1/2 md:border-l md:border-gray-300 relative">
                 <h2 className="title-font font-light sm:text-8xl text-3xl text-gray-800 my-4">
                   1 D
                 </h2>
@@ -98,7 +98,7 @@ const Stats = () => {
                   <TfiLayoutMenuSeparated />
                 </p>
                 <p className="leading-tight font-medium text-2xl w-52 text-start mx-auto text-gray-800 mt-4">
-                  Application Approval Time
+                  Approval
                 </p>
                 <span className="absolute -bottom-6 -left-1 h-[3px] w-0 bg-red-500 group-hover:w-[103%] transition-all duration-500 ease-in-out"></span>
               </div>
@@ -109,7 +109,7 @@ const Stats = () => {
             <motion.img
               src="https://html.xpressbuddy.com/e.visa/assets/img/shape/f_shape1.png"
               alt=""
-              className="w-20 h-20"
+              className="w-20 h-20 "
               animate={{ y: [0, -20, 0, 20, 0] }}
               transition={{
                 duration: 6,
@@ -120,7 +120,7 @@ const Stats = () => {
             <motion.img
               src="https://html.xpressbuddy.com/e.visa/assets/img/shape/f_shape2.png"
               alt=""
-              className="w-20 h-20"
+              className="w-20 h-20 "
               animate={{ y: [0, 20, 0, -20, 0] }}
               transition={{
                 duration: 6,

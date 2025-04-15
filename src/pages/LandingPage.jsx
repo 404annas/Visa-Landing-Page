@@ -23,7 +23,7 @@ const LandingPage = () => {
       <About />
       <Expertise />
       <Services />
-      <Stats />
+      {/* <Stats /> */}
       <Countries />
       <Popular />
       <Feedback />

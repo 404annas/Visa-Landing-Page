@@ -40,7 +40,7 @@ const Contact = () => {
               If You Have Any Question, Feel Free to Contact With Us.
             </h1>
 
-            <div className="flex flex-col gap-4 my-4 pr-32">
+            <div className="flex flex-col gap-4 my-4 md:pr-32">
               <input
                 className="bg-zinc-800/70 p-4 lg:w-[130%] text-white outline-none border-none"
                 type="text"
