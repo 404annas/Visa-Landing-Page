@@ -1,11 +1,12 @@
-import React from 'react'
+import React from "react";
+import Hero from "../WVComponents/Hero/Hero";
 
 const WorkVisa = () => {
   return (
-    <div className='min-h-screen px-4 py-8'>
-
+    <div className="min-h-screen pt-8">
+      <Hero />
     </div>
-  )
-}
+  );
+};
 
-export default WorkVisa
+export default WorkVisa;
