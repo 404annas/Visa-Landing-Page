@@ -74,7 +74,7 @@ const Footer = () => {
           <div className="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col mt-20">
             <img
               className="text-white"
-              src="https://html.xpressbuddy.com/e.visa/assets/img/logo/logo-black.svg"
+              src="https://html.xpressbuddy.com/e.visa/assets/img/work-visa/logo.svg"
               alt="Logo"
             />
             <p className="text-sm text-white sm:ml-6 sm:mt-0 mt-4">
