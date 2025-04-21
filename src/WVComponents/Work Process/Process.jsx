@@ -61,8 +61,8 @@ const Process = () => {
             alt="Magic Icon"
           />
         </div>
-        <h1 className="text-4xl md:text-5xl font-semibold text-center text-white flex gap-2">
-          Our Work <span className="text-amber-400">Process</span>
+        <h1 className="text-4xl md:text-5xl font-semibold text-center text-white flex gap-3">
+          Our <span className="text-amber-400">Process</span>
         </h1>
       </div>
 
