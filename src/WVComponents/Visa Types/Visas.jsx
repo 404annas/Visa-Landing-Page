@@ -68,50 +68,57 @@ const Visas = () => {
   ];
 
   return (
-    <section className="bg-white px-10 py-20 -mt-56">
+    <section className="bg-white px-2 sm:px-10 py-20 -mt-56">
       {/* Section Heading */}
-      <div className="flex flex-col gap-4 items-center justify-center mb-12">
+      <div className="flex flex-col gap-4 items-center justify-center mb-12 text-center">
         <div className="flex gap-2 items-center">
           <img
             src="https://html.xpressbuddy.com/e.visa/assets/img/work-visa/magic-icon02.svg"
             alt="Magic Icon"
+            className="w-6 sm:w-8 md:w-10"
           />
-          <h1 className="font-medium text-black">VISA TYPES</h1>
+          <h1 className="font-medium text-black text-sm sm:text-base md:text-lg">
+            VISA TYPES
+          </h1>
           <img
             src="https://html.xpressbuddy.com/e.visa/assets/img/work-visa/magic-icon.svg"
             alt="Magic Icon"
+            className="w-6 sm:w-8 md:w-10"
           />
         </div>
-        <h1 className="text-4xl md:text-5xl font-semibold text-center text-black flex gap-2">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl font-semibold text-black">
           Available Types Of Visa
         </h1>
       </div>
 
       {/* Visas Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {visaTypes.map((visa, idx) => (
-          <div key={idx} className="border-b border-slate-400 pb-6">
-            {/* Top Row: Image + Heading */}
+          <div key={idx} className="border-b border-slate-300 pb-6">
             <div className="flex items-start gap-4">
               <img
                 src={visa.image}
                 alt={visa.heading}
-                className="w-10 h-10 mt-1"
+                className="w-8 sm:w-10 md:w-12 h-8 sm:h-10 md:h-12 mt-1"
               />
               <div>
-                <h2 className="text-2xl font-semibold text-black">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-semibold text-black">
                   {visa.heading}
                 </h2>
-                <p className="text-gray-600 mt-2">{visa.content}</p>
+                <p className="text-sm sm:text-base text-gray-600 mt-2 leading-relaxed">
+                  {visa.content}
+                </p>
               </div>
             </div>
           </div>
         ))}
       </div>
-      <div className="flex justify-center mt-6">
-        <button className="relative overflow-hidden px-6 py-3 bg-green-500 text-white font-semibold rounded-md w-fit group">
+
+      {/* Button */}
+      <div className="flex justify-center mt-10">
+        <button className="relative overflow-hidden px-6 py-3 bg-green-500 text-white font-semibold rounded-md w-fit group text-sm sm:text-base">
           <span className="absolute inset-0 bg-orange-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></span>
-          <span className="relative z-10 text-black">
+          <span className="relative z-10 text-black sm:text-md text-sm">
             Get a Free Consultation
           </span>
         </button>

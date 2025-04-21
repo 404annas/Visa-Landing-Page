@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Company } from "../wvComponents";
+import { Company } from "../wvComponents"; // Make sure this is correctly imported
 
 const Testimonials = () => {
   const testimonial = [
@@ -36,28 +36,6 @@ const Testimonials = () => {
       person:
         "https://html.xpressbuddy.com/e.visa/assets/img/work-visa/avatar-img03.jpg",
     },
-    {
-      name: "Samantha Lee",
-      destination: "Teaching Assistant at Precision",
-      image: "⭐",
-      rating: "5.0",
-      text: "From start to finish, the personalized support was exceptional. I felt confident throughout, knowing experts were helping me navigate the complexities of work visas. A truly outstanding service!",
-      country:
-        "https://html.xpressbuddy.com/e.visa/assets/img/work-visa/flag-austrila.jpg",
-      person:
-        "https://html.xpressbuddy.com/e.visa/assets/img/work-visa/avatar-img04.jpg",
-    },
-    {
-      name: "Joshua Thomas",
-      destination: "Conservation Scientist at Greenfield",
-      image: "⭐",
-      rating: "4.8",
-      text: "The team made my work visa application so easy! They took care of all the paperwork and kept me updated every step of the way. Thanks to their expertise, I got my visa approved without any hassle and was able to start my new job on time!",
-      country:
-        "https://html.xpressbuddy.com/e.visa/assets/img/work-visa/flag-uk.jpg",
-      person:
-        "https://html.xpressbuddy.com/e.visa/assets/img/work-visa/avatar-img05.jpg",
-    },
   ];
 
   const [expandedIndex, setExpandedIndex] = useState(null);
@@ -67,104 +45,75 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="px-10 py-20 bg-[#121c27]">
+    <section className="px-2 sm:px-10 py-20 bg-[#121c27]">
+      {/* Heading */}
       <div className="flex flex-col gap-4 items-center justify-center mb-12">
         <div className="flex gap-2 items-center">
           <img
             src="https://html.xpressbuddy.com/e.visa/assets/img/work-visa/magic-icon02.svg"
             alt="Magic Icon"
           />
-          <h1 className="font-medium text-white">TESTIMONIALS</h1>
+          <h1 className="font-medium text-white text-sm sm:text-base">
+            TESTIMONIALS
+          </h1>
           <img
             src="https://html.xpressbuddy.com/e.visa/assets/img/work-visa/magic-icon.svg"
             alt="Magic Icon"
           />
         </div>
-        <h1 className="text-4xl md:text-5xl font-semibold text-center text-white flex gap-2">
-          Hear From Our <span className="text-amber-400">Customers!</span>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-center text-white flex gap-2">
+          Our <span className="text-amber-400">Customers!</span>
         </h1>
       </div>
-
-      {/* Main white container */}
-      <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+      {/* Testimonial Cards */}
+      <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3 mt-12">
         {testimonial.map((t, idx) => {
           const isOpen = expandedIndex === idx;
           return (
             <div
               key={idx}
+              className="bg-white rounded-xl shadow-lg p-6 cursor-pointer transition-all duration-500 hover:shadow-xl relative"
               onClick={() => toggleExpand(idx)}
-              className="px-6 py-4 cursor-pointer transition-all duration-300"
             >
-              <div className="flex justify-between items-center">
-                {/* Name on Left */}
+              {/* User Info */}
+              <div className="flex items-center gap-4 mb-4">
+                <img
+                  src={t.person}
+                  alt={t.name}
+                  className="w-14 h-14 rounded-full object-cover"
+                />
                 <div>
-                  <h2 className="text-lg font-semibold text-slate-800">
+                  <h2 className="font-semibold text-slate-800 text-base">
                     {t.name}
                   </h2>
-                </div>
-
-                {/* Destination, star and rating on Right */}
-                <div className="flex flex-col items-end text-right">
-                  <p className="text-sm text-slate-600">{t.destination}</p>
-                  <div className="flex items-center gap-2 text-yellow-500 mt-1">
-                    <span>{t.image}</span>
-                    <span className="font-bold text-slate-700">{t.rating}</span>
-                  </div>
+                  <p className="text-sm text-slate-500">{t.destination}</p>
                 </div>
               </div>
 
-              {/* Expandable content */}
-              <div
-                className={`transition-all duration-500 ease-in-out grid ${
-                  isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                }`}
-              >
-                <div className="overflow-hidden">
-                  <div className="bg-gray-200 mt-4 rounded-lg p-16 flex flex-col md:flex-row gap-10">
-                    {/* Left part - image & flag */}
-                    <div className="flex flex-col justify-between items-start">
-                      <img
-                        src={t.person}
-                        alt="User"
-                        className="rounded-xl w-28 h-28 object-cover"
-                      />
-                      <img
-                        src={t.country}
-                        alt="Country Flag"
-                        className="mt-10"
-                      />
-                    </div>
+              {/* Text */}
+              <p className="text-slate-600 text-sm sm:text-base mb-4">
+                {isOpen ? t.text : `${t.text.slice(0, 110)}...`}
+              </p>
 
-                    {/* Right part - quote & text */}
-                    <div className="flex-1 flex items-start gap-4">
-                      <span className="text-5xl text-slate-500">“</span>
-                      <p className="text-slate-700 text-base leading-relaxed">
-                        {t.text}
-                      </p>
-                    </div>
-                  </div>
+              {/* Flag + Rating */}
+              <div className="flex justify-between items-center">
+                <img
+                  src={t.country}
+                  alt="Flag"
+                  className="w-6 h-4 object-cover rounded shadow"
+                />
+                <div className="flex items-center gap-1 text-yellow-500 text-sm">
+                  {t.image.repeat(Math.floor(parseFloat(t.rating)))}
+                  <span className="ml-1 text-slate-600 font-medium">
+                    {t.rating}
+                  </span>
                 </div>
               </div>
-
-              {/* Bottom border for each testimonial */}
-              {idx < testimonial.length - 1 && (
-                <div className="border-b border-slate-300 mt-4" />
-              )}
             </div>
           );
         })}
       </div>
-
       <Company />
-
-      <div className="flex justify-center mt-10">
-        <button className="relative overflow-hidden px-6 py-3 bg-green-500 text-white font-semibold rounded-md w-fit group">
-          <span className="absolute inset-0 bg-orange-500 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out z-0"></span>
-          <span className="relative z-10 text-black">
-            Get a Free Consultation
-          </span>
-        </button>
-      </div>
     </section>
   );
 };

@@ -38,47 +38,53 @@ const Faq = () => {
   ];
 
   return (
-    <section className="px-4 py-10 bg-gray-100">
+    <section className="px-2 sm:px-4 py-10 bg-gray-100">
       <div className="flex flex-col gap-4 items-center justify-center mb-12">
         <div className="flex gap-2 items-center">
           <img
             src="https://html.xpressbuddy.com/e.visa/assets/img/work-visa/magic-icon02.svg"
             alt="Magic Icon"
           />
-          <h1 className="font-medium text-black">FAQ</h1>
+          <h1 className="font-medium text-black text-base sm:text-lg">FAQ</h1>
           <img
             src="https://html.xpressbuddy.com/e.visa/assets/img/work-visa/magic-icon.svg"
             alt="Magic Icon"
           />
         </div>
-        <h1 className="text-4xl md:text-5xl font-semibold text-center text-black flex gap-2">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-center text-black flex gap-2">
           Common Questions Answered
         </h1>
       </div>
 
-      <div className="w-full px-10 my-10 space-y-4">
+      <div className="w-full px-2 sm:px-6 md:px-10 my-10 space-y-4">
         {items.map((item, index) => (
           <div key={index} className="border rounded-xl overflow-hidden">
             <button
               onClick={() => toggle(index)}
-              className="w-full px-6 py-8 text-left font-semibold bg-white hover:bg-gray-200 flex justify-between items-center"
+              className="w-full px-6 py-6 sm:py-8 text-left font-semibold bg-white hover:bg-gray-200 flex justify-between items-center"
             >
-              <span className="sm:text-xl text-md">{item.title}</span>
-              <span className="text-xl">
+              <span className="text-base sm:text-lg md:text-xl">
+                {item.title}
+              </span>
+              <span className="text-lg sm:text-xl">
                 {openIndex === index ? <ImCross /> : <FaPlus />}
               </span>
             </button>
             <div
               className={`transition-all duration-300 px-6 overflow-hidden ${
-                openIndex === index ? "max-h-44 py-8" : "max-h-0"
+                openIndex === index ? "max-h-44 py-6 sm:py-8" : "max-h-0"
               }`}
             >
-              <p className="text-gray-700 text-md mb-4">{item.content}</p>
-              <p className="text-gray-700 text-md">
+              <p className="text-gray-700 text-sm sm:text-base mb-4">
+                {item.content}
+              </p>
+              <p className="text-gray-700 text-sm sm:text-base">
                 • Comprehensive Visa Assistance.
               </p>
-              <p className="text-gray-700 text-md">• Visa Category Expertise</p>
-              <p className="text-gray-700 text-md">
+              <p className="text-gray-700 text-sm sm:text-base">
+                • Visa Category Expertise
+              </p>
+              <p className="text-gray-700 text-sm sm:text-base">
                 • Transparency and Communication
               </p>
             </div>
@@ -87,11 +93,11 @@ const Faq = () => {
       </div>
 
       <div className="relative">
-        <img
+        {/* <img
           className="absolute top-[155px] left-[500px]"
           src="https://html.xpressbuddy.com/e.visa/assets/img/work-visa/flan02.png"
           alt="Shape"
-        />
+        /> */}
         <img
           src="https://html.xpressbuddy.com/e.visa/assets/img/work-visa/faq-shape.png"
           alt="Shape"
