@@ -23,62 +23,18 @@ const Navbar = () => {
 
         {/* Desktop Menu */}
         <nav className="hidden md:flex items-center space-x-6 text-base">
-          <div className="relative group">
-            <div className="font-bold cursor-pointer text-black flex gap-2 items-center">
-              <p>Home</p>
-              <p>+</p>
-            </div>
-            <div className="absolute left-0 top-full mt-4 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
-              <ul className="space-y-2 text-sm text-gray-700">
-                <li className="hover:text-red-600 cursor-pointer">Dashboard</li>
-                <li className="hover:text-red-600 cursor-pointer">Settings</li>
-                <li className="hover:text-red-600 cursor-pointer">Profile</li>
-                <li className="hover:text-red-600 cursor-pointer">Logout</li>
-              </ul>
-            </div>
+          <div className="font-bold cursor-pointer text-black flex gap-2 items-center">
+            <p>Home</p>
           </div>
 
-          <div className="relative group">
-            <div className="font-bold cursor-pointer text-black flex gap-2 items-center">
-              <p>Pages</p>
-              <p>+</p>
-            </div>
-            <div className="absolute left-0 top-full mt-4 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
-              <ul className="space-y-2 text-sm text-gray-700">
-                <li>
-                  <Link to="/" className="hover:text-red-600">
-                    Student Visa
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/workvisa" className="hover:text-red-600">
-                    Work Visa
-                  </Link>
-                </li>
-                <li className="hover:text-red-600 cursor-pointer">Services</li>
-                <li className="hover:text-red-600 cursor-pointer">Pricing</li>
-                <li className="hover:text-red-600 cursor-pointer">FAQs</li>
-              </ul>
-            </div>
+          <div className="font-bold cursor-pointer text-black flex gap-2 items-center">
+            <p>Pages</p>
           </div>
 
-          <Link className="font-bold text-black hover:text-red-600" to="/about">
-            About Us
-          </Link>
+          <div className="font-bold text-black cursor-pointer">About Us</div>
 
-          <div className="relative group">
-            <div className="font-bold cursor-pointer text-black flex gap-2 items-center">
-              <p>Country</p>
-              <p>+</p>
-            </div>
-            <div className="absolute left-0 top-full mt-4 w-40 bg-white shadow-lg rounded-md opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-4">
-              <ul className="space-y-2 text-sm text-gray-700">
-                <li className="hover:text-red-600 cursor-pointer">USA</li>
-                <li className="hover:text-red-600 cursor-pointer">Canada</li>
-                <li className="hover:text-red-600 cursor-pointer">Australia</li>
-                <li className="hover:text-red-600 cursor-pointer">UK</li>
-              </ul>
-            </div>
+          <div className="font-bold cursor-pointer text-black flex gap-2 items-center">
+            <p>Country</p>
           </div>
         </nav>
 
@@ -114,63 +70,30 @@ const Navbar = () => {
           {[
             {
               title: "Home",
-              items: ["Dashboard", "Settings", "Profile", "Logout"],
             },
             {
               title: "Pages",
-              items: [
-                <Link to="/" onClick={() => setMenuOpen(false)}>
-                  Student Visa
-                </Link>,
-                <Link to="/workvisa" onClick={() => setMenuOpen(false)}>
-                  Work Visa
-                </Link>,
-                "Services",
-                "Pricing",
-                "FAQs",
-              ],
             },
             {
               title: "Country",
-              items: ["USA", "Canada", "Australia", "UK"],
             },
           ].map((section, index) => (
             <div key={index} className="mb-4 border-b pb-2">
               <button
                 onClick={() => toggleAccordion(section.title)}
-                className="w-full flex justify-between items-center font-semibold text-left text-black py-2"
+                className="w-full flex justify-between items-center font-semibold sm:text-base text-sm text-left text-black py-2"
               >
                 <span>{section.title}</span>
-                <span className="text-xl">
-                  {activeAccordion === section.title ? "−" : "+"}
-                </span>
               </button>
-
-              <div
-                className={`overflow-hidden transition-all duration-300 ease-in-out ${
-                  activeAccordion === section.title
-                    ? "max-h-60 opacity-100"
-                    : "max-h-0 opacity-0"
-                }`}
-              >
-                <ul className="pl-4 mt-2 space-y-2 text-sm text-gray-700">
-                  {section.items.map((item, idx) => (
-                    <li key={idx} className="hover:text-red-600 cursor-pointer">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
             </div>
           ))}
 
-          <Link
-            to="/about"
-            className="block mt-4 text-black font-semibold hover:text-red-600"
+          <div
+            className="block mt-4 text-black font-semibold sm:text-base text-sm"
             onClick={() => setMenuOpen(false)}
           >
             About Us
-          </Link>
+          </div>
         </div>
       </div>
     </header>
